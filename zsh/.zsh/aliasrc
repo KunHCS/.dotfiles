@@ -1,0 +1,27 @@
+# ls
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+
+# grep 
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# confirm before overwriting
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+# disk
+alias df='df -h'
+alias du='du -h'
+
+# docker
+alias dkex='docker exec -it ' # exec command in containers
+alias dkps='docker ps'  # List running Docker containers
+alias dkpsa='docker ps -a'  # List all Docker containers
+
+# docker-compose
+alias dcu='docker-compose up -d'
+alias dcc='docker-compose config'
