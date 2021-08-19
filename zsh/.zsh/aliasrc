@@ -23,5 +23,5 @@ alias dkps='docker ps'  # List running Docker containers
 alias dkpsa='docker ps -a'  # List all Docker containers
 
 # docker-compose
-alias dcu='docker-compose up -d'
-alias dcc='docker-compose config'
+alias dkcu='docker-compose up -d'
+alias dkcc='docker-compose config'
