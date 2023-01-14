@@ -6,7 +6,7 @@ zstyle ':vcs_info:git:*' formats ' (%b)'
 precmd() {
     vcs_info
     NEWLINE=$'\n'
-    PROMPT="%n%F{green}@%f%m %F{blue}%3~%f%F{cyan}${vcs_info_msg_0_}%f${NEWLINE}%# "
+    PROMPT="%F{green}%n@%m%f %F{blue}%3~%f%F{cyan}${vcs_info_msg_0_}%f${NEWLINE}%# "
 }
 
 # History in cache directory:
