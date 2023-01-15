@@ -14,7 +14,7 @@ precmd() {
 env=~/.ssh/agent.env
 agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
 agent_start () {
-    (umask 077; ssh-agent >| "$env")
+    (umask 077; ssh-agent -t 86400 >| "$env")
     . "$env" >| /dev/null ; }
 agent_load_env
 # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
