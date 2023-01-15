@@ -43,6 +43,9 @@ bindkey '^e' edit-command-line
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.zsh/aliasrc" ] && source "$HOME/.zsh/aliasrc"
 
+# zsh-z
+source ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh 2>/dev/null
+
 # Load zsh-syntax-highlighting; should be last.
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

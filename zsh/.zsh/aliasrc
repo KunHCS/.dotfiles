@@ -2,9 +2,9 @@
 alias sudo='sudo '
 
 # ls
-alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
+alias ls='ls -h --color=auto'
+alias ll='ls -lF'
+alias la='ls -alF'
 
 # grep 
 alias grep='grep --color=auto'
@@ -28,3 +28,6 @@ alias dkpsa='docker ps -a'  # List all Docker containers
 # docker-compose
 alias dkcu='docker-compose up -d'
 alias dkcc='docker-compose config'
+
+# thefuck alias
+eval $(thefuck --alias)
