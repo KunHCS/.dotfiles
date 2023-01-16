@@ -9,7 +9,7 @@ set smartindent
 set nowrap
 set incsearch
 set scrolloff=8
-
+set showcmd
 set showmode
 
 syntax on
