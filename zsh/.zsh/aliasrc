@@ -21,13 +21,15 @@ alias df='df -h'
 alias du='du -h'
 
 # docker
-alias dkex='docker exec -it ' # exec command in containers
-alias dkps='docker ps'  # List running Docker containers
-alias dkpsa='docker ps -a'  # List all Docker containers
+alias dex='docker exec -it ' # exec command in containers
+alias dps='docker ps'  # List running Docker containers
+alias dpsa='docker ps -a'  # List all Docker containers
 
 # docker-compose
-alias dkcu='docker-compose up -d'
-alias dkcc='docker-compose config'
+alias dc='docker compose'
+alias dcu='dc up -d'
+alias dcd='dc down'
+alias dcc='dc config'
 
 # thefuck alias
 eval $(thefuck --alias)
