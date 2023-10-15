@@ -30,6 +30,7 @@ alias dc='docker compose'
 alias dcu='dc up -d'
 alias dcd='dc down'
 alias dcc='dc config'
+alias dcr='dc restart'
 
 # thefuck alias
 eval $(thefuck --alias)
