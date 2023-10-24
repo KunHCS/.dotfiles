@@ -10,6 +10,10 @@ vim.g.maplocalleader = " "
 -- Press jk fast to exit insert mode 
 keymap("i", "jj", "<ESC>", opts)
 
+-- Visual --
+keymap("v", "<Tab>", ">gv", opts)
+keymap("v", "<S-Tab>", "<gv", opts)
+
 -- Telescope --
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})

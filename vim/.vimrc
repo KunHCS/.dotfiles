@@ -2,8 +2,8 @@ set nocompatible
 set encoding=utf-8
 set noerrorbells
 set relativenumber number
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set nowrap
@@ -25,6 +25,8 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Keybinds
 inoremap jj <ESC>
 nnoremap <C-c> :nohl<CR>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " Ps = 0  -> blinking block.
 " Ps = 1  -> blinking block (default).
