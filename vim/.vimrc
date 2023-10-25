@@ -14,6 +14,10 @@ set showcmd
 set showmode
 set ignorecase
 set smartcase
+set noswapfile
+set nobackup
+set nowritebackup
+set viminfo=
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu

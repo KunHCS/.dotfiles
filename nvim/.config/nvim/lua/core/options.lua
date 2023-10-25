@@ -14,6 +14,9 @@
   scrolloff = 8,                          
   sidescrolloff = 8,                      
   wrap = false,
+  backup = false,
+  writebackup = false,
+  swapfile = false,
 
 }
 
