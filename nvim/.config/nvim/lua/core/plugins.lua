@@ -4,7 +4,20 @@ local plugins = {
   {
   'nvim-telescope/telescope.nvim', branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
-  }
+  },
+  -- snippets --
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    dependencies = { "rafamadriz/friendly-snippets" }
+  },
+  "rafamadriz/friendly-snippets",
+  -- cmp plugins --
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'saadparwaiz1/cmp_luasnip',
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
