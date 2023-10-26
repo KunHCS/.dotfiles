@@ -13,7 +13,9 @@ local lspconfig = require('lspconfig')
 -- }
 
 -- yamlls --
-require('lspconfig').yamlls.setup{}
+require('lspconfig').yamlls.setup{
+  capabilities = capabilities,
+}
 -- lua_ls --
 lspconfig.lua_ls.setup {
   capabilities = capabilities,

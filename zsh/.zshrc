@@ -31,7 +31,8 @@ HISTFILE=~/.zsh_history
 setopt appendhistory
 
 # Custom Variables
-EDITOR=vim
+VISUAL=vim
+EDITOR=$VISUAL
 
 # Autosuggestion Options
 bindkey '^ ' autosuggest-accept
