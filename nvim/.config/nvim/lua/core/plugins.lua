@@ -24,6 +24,8 @@ local plugins = {
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
+  -- blankline (indent lines) --
+  -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
