@@ -3,8 +3,8 @@ local plugin = {
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "hrsh7th/cmp-nvim-lsp"
-  }
+    "hrsh7th/cmp-nvim-lsp",
+  },
 }
 
 -- keymaps --
@@ -15,24 +15,23 @@ local on_attach = function(_, bufnr)
 
   opts.desc = "See available code actions"
   keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
-
 end
 
 plugin.config = function()
   require("mason").setup()
-  require("mason-lspconfig").setup{
-    ensure_installed = {"lua_ls", "yamlls"}
-  }
+  require("mason-lspconfig").setup({
+    ensure_installed = { "lua_ls", "yamlls" },
+  })
   local capabilities = require("cmp_nvim_lsp").default_capabilities()
   local lspconfig = require("lspconfig")
 
   -- yaml --
-  lspconfig.yamlls.setup{
+  lspconfig.yamlls.setup({
     capabilities = capabilities,
-    on_attach = on_attach
-  }
+    on_attach = on_attach,
+  })
   -- lua --
-  lspconfig.lua_ls.setup{
+  lspconfig.lua_ls.setup({
     capabilities = capabilities,
     on_attach = on_attach,
     settings = { -- custom settings for lua
@@ -49,10 +48,9 @@ plugin.config = function()
           },
         },
       },
-    }
-  }
+    },
+  })
   -- other --
-
 end
 
 return plugin
