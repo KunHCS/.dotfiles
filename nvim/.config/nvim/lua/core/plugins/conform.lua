@@ -10,7 +10,8 @@ plugin.config = function()
   conform.setup({
     formatters_by_ft = {
       lua = { "stylua" },
-      yaml = { "yamlfmt" },
+      -- yaml = { "yamlfmt" },
+      yaml = { "prettier" },
     },
     -- potentially broken without work around on :wq --
     -- https://github.com/neovim/neovim/issues/21856#issuecomment-1514723887 --
