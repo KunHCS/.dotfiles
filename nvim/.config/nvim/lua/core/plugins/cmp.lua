@@ -1,5 +1,6 @@
 local plugin = {
   'hrsh7th/nvim-cmp',
+  event = {'InsertEnter', 'CmdlineEnter'},
   dependencies = {
     -- luasnip --
     'L3MON4D3/LuaSnip',
