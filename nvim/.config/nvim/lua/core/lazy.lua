@@ -42,4 +42,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local opts={}
-require("lazy").setup(plugins, opts)
+require("lazy").setup({
+	{ import = "core.plugins" },
+
+})
+
+
+
+
+
+
