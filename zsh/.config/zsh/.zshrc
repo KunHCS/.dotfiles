@@ -17,6 +17,7 @@ precmd() {
     NEWLINE=$'\n'
     PROMPT="%F{green}%n@%m%f %F{blue}%3~%f%F{cyan}${vcs_info_msg_0_}%f${NEWLINE}%# "
 }
+zle_highlight=('paste:none')
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -56,6 +57,9 @@ zle -N down-line-or-beginning-search
 # fzf https://github.com/junegunn/fzf#key-bindings-for-command-line
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh 
+# ALT-c displays directory tree
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
