@@ -1,6 +1,10 @@
 #!/bin/bash
 # Enable colors vcs_info and change prompt:
 # https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples
+#
+# zsh-autocomplete
+# source $ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 2>/dev/null
+
 if [ -z "$ZDOTDIR" ] ; then
   echo "ZDOTDIR not set"
   ZDOTDIR=$HOME/.config/zsh
@@ -40,33 +44,38 @@ export VISUAL
 export EDITOR=$VISUAL
 alias vim=$EDITOR
 
-# Autosuggestion Options
-bindkey '^ ' autosuggest-accept
-
 # Syntax Highlighting Options
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[globbing]='none'
+# typeset -A ZSH_HIGHLIGHT_STYLES
+# ZSH_HIGHLIGHT_STYLES[globbing]='none'
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585858,underline"
 
-# Basic auto/tab complete:
-fpath=("$HOME/.zsh/completion" $fpath)
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots) # Include hidden files.
 
+#
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+# Autosuggestion Options
+bindkey '^ ' autosuggest-accept
+
 # Load aliases and shortcuts if existent.
 [ -f "$ZDOTDIR/aliasrc" ] && source "$ZDOTDIR/aliasrc"
 
-# Plugins
-source $ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh 2>/dev/null
-# Load zsh-syntax-highlighting; should be last.
-# source $ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 2>/dev/null
-source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh 2>/dev/null
-source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null
+# Basic auto/tab complete:
+fpath=("$ZDOTDIR/completion" $fpath)
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+autoload -Uz compinit && compinit
+_comp_options+=(globdots) # Include hidden files.
 
+# fzf
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh 
+# Plugins
+# source $ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh
+source $ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# try https://github.com/zdharma-continuum/fast-syntax-highlighting
+# Load zsh-syntax-highlighting; should be last.
+# source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null

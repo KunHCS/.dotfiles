@@ -1,13 +1,23 @@
 [submodule "zsh/.zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	branch = master
 [submodule "zsh/.zsh/plugins/zsh-autosuggestions"]
 	path = zsh/.zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "zsh/.zsh/plugins/zsh-z"]
-	path = zsh/.zsh/plugins/zsh-z
-	url = https://github.com/agkozak/zsh-z.git
 [submodule "zsh/.zsh/plugins/zsh-autocomplete"]
 	path = zsh/.zsh/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete
 	branch = main
+[submodule "zsh/.config/zsh/plugins/fzf-tab"]
+	path = zsh/.config/zsh/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
+	branch = master
+[submodule "zsh/.config/zsh/plugins/fast-syntax-highlighting"]
+	path = zsh/.config/zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+	branch = master
+[submodule "zsh/.config/zsh/plugins/zsh-z"]
+	path = zsh/.config/zsh/plugins/zsh-z
+	url = https://github.com/agkozak/zsh-z.git
+	branch = master
