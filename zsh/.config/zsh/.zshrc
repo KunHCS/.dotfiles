@@ -48,13 +48,20 @@ alias vim=$EDITOR
 # typeset -A ZSH_HIGHLIGHT_STYLES
 # ZSH_HIGHLIGHT_STYLES[globbing]='none'
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585858,underline"
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
 
-
-#
+# fzf https://github.com/junegunn/fzf#key-bindings-for-command-line
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+bindkey "^k" up-line-or-beginning-search # Up
+bindkey "^j" down-line-or-beginning-search # Down
 # Autosuggestion Options
 bindkey '^ ' autosuggest-accept
 
@@ -68,11 +75,8 @@ zmodload zsh/complist
 autoload -Uz compinit && compinit
 _comp_options+=(globdots) # Include hidden files.
 
-# fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh 
 # Plugins
-# source $ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh
+source $ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh
 source $ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
