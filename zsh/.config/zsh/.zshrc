@@ -9,10 +9,6 @@ fi
 
 # Enable colors vcs_info and change prompt:
 # https://github.com/zsh-users/zsh/blob/master/Misc/vcs_info-examples
-#
-# zsh-autocomplete
-# source $ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 2>/dev/null
-source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 if [ -z "$ZDOTDIR" ] ; then
   echo "ZDOTDIR not set"
@@ -88,11 +84,19 @@ zmodload zsh/complist
 autoload -Uz compinit && compinit
 _comp_options+=(globdots) # Include hidden files.
 
+source $ZDOTDIR/plugin_manager 
 # Plugins
-source $ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh
-source $ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh
-source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+add_plugin 'romkatv/powerlevel10k'
+add_plugin 'Aloxaf/fzf-tab'
+add_plugin 'agkozak/zsh-z'
+add_plugin 'zsh-users/zsh-autosuggestions'
+add_plugin 'zdharma-continuum/fast-syntax-highlighting'
+
+# source $ZDOTDIR/plugins/fzf-tab/fzf-tab.plugin.zsh
+# source $ZDOTDIR/plugins/zsh-z/zsh-z.plugin.zsh
+# source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+# source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
 # try https://github.com/zdharma-continuum/fast-syntax-highlighting
 # Load zsh-syntax-highlighting; should be last.
 # source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 2>/dev/null

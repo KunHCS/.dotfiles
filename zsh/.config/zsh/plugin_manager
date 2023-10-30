@@ -1,0 +1,28 @@
+# !/bin/sh
+# https://github.com/ChristianChiarulli/Machfiles/blob/6373a1fd1e42ca2fd8babd95ef4acce9164c86c3/zsh/.config/zsh/zsh-functions
+
+function update_plugin(){
+  for repo in "$ZDOTDIR/plugins"/* 
+  do
+    echo "Updating $(basename "$repo")"
+    (cd "$repo" && git pull)
+  done
+}
+
+function source_plugin(){
+  PLUGIN_DIR="$ZDOTDIR/plugins/$1"
+  [ -e "$PLUGIN_DIR/$1.plugin.zsh" ] && source "$PLUGIN_DIR/$1.plugin.zsh"  
+  [ -e "$PLUGIN_DIR/$1.zsh-theme" ] && source "$PLUGIN_DIR/$1.zsh-theme"
+}
+
+function add_plugin() {
+  PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+  if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then 
+    # For plugins
+    source_plugin "$PLUGIN_NAME"
+  else
+    git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+    source_plugin "$PLUGIN_NAME"
+  fi
+}
+
