@@ -13,3 +13,6 @@
 [submodule "zsh/.config/zsh/plugins/zsh-z"]
 	path = zsh/.config/zsh/plugins/zsh-z
 	url = https://github.com/agkozak/zsh-z.git
+[submodule "zsh/.config/zsh/plugins/powerlevel10k"]
+	path = zsh/.config/zsh/plugins/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git

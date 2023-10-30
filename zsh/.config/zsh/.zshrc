@@ -12,7 +12,7 @@ fi
 #
 # zsh-autocomplete
 # source $ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 2>/dev/null
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 if [ -z "$ZDOTDIR" ] ; then
   echo "ZDOTDIR not set"
