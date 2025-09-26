@@ -10,7 +10,7 @@ keymap("n", "<Leader>e", ":Ex<Cr>", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
-keymap("i", "jj", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 keymap("v", "<Tab>", ">gv", opts)
